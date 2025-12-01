@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MCPDL-Ku</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>MCPDL-Ku</h1>
+      <nav>
+        <input id="search" placeholder="Cari..." />
+        <select id="filter">
+          <option value="">Semua</option>
+          <option value="map">Map</option>
+          <option value="addon">Add-on</option>
+          <option value="texture">Texture</option>
+          <option value="skin">Skin</option>
+        </select>
+        <button id="open-upload">+ Upload</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- upload modal -->
+    <section id="upload-modal" class="modal hidden">
+      <div class="modal-box">
+        <h2>Upload Item</h2>
+
+        <label>Judul
+          <input id="up-title" />
+        </label>
+
+        <label>Kategori
+          <select id="up-cat">
+            <option value="map">Map</option>
+            <option value="addon">Add-on</option>
+            <option value="texture">Texture</option>
+            <option value="skin">Skin</option>
+          </select>
+        </label>
+
+        <label>Deskripsi
+          <textarea id="up-desc" rows="3"></textarea>
+        </label>
+
+        <label>Gambar Preview
+          <input id="up-image" type="file" accept="image/*" />
+        </label>
+
+        <label>File Utama (mcworld / mcpack / zip)
+          <input id="up-file" type="file" />
+        </label>
+
+        <div class="form-actions">
+          <button id="upload-btn">Upload</button>
+          <button id="close-upload" type="button">Batal</button>
+        </div>
+      </div>
+    </section>
+
+    <h2>Daftar Item</h2>
+    <div id="list" class="grid"></div>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+
+  <script src="firebase.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
